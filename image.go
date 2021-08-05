@@ -5,12 +5,12 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"strings"
 	"io/ioutil"
 	"math"
 	"net/http"
+	"strings"
 
-	"github.com/h2non/bimg"
+	"github.com/braincraze/bimg"
 )
 
 // OperationsMap defines the allowed image transformation operations listed by name.
@@ -317,6 +317,8 @@ func Watermark(buf []byte, o ImageOptions) (Image, error) {
 	opts.Watermark.Font = o.Font
 	opts.Watermark.Margin = o.Margin
 	opts.Watermark.Width = o.TextWidth
+	opts.Watermark.Top = o.Top
+	opts.Watermark.Left = o.Left
 	opts.Watermark.Opacity = o.Opacity
 	opts.Watermark.NoReplicate = o.NoReplicate
 
